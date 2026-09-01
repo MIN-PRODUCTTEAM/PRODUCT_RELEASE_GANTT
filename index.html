@@ -272,13 +272,15 @@ Brochure</textarea></div><div class="field-group"><label style="display:flex;ali
 // The dashboard reads this bin on load and writes it on save, which is what
 // makes edits visible to everyone rather than just the person who made them.
 //
-//   TESTING  -> put a THROWAWAY bin id below. Nothing you do can touch live data.
-//   GOING LIVE -> change BIN_ID to the production bin. Nothing else changes.
+//   TEST bin (in use now):  6a9671c4da38895dfe2981bd
+//   LIVE bin (do not point here until ready): 6a3b6c15f5f4af5e29271a2a
 //
-// If BIN_ID is left as the placeholder, the page still works: it falls back to
-// the data embedded further down and shows "Offline" on the status dot.
-const BIN_ID     = "PASTE_TEST_BIN_ID_HERE";
-const API_KEY    = "PASTE_JSONBIN_KEY_HERE";
+// To switch, change BIN_ID below. Nothing else needs to change.
+//
+// If BIN_ID is left as a PASTE_ placeholder, the page still works: it falls back
+// to the data embedded further down and shows "Not connected" on the status dot.
+const BIN_ID     = "6a9671c4da38895dfe2981bd";
+const API_KEY    = "$2a$10$nG8jmGUI3/p4/kwEG0Jf6.3LWPhWRRajkPDLMQOEOsU4OaBqENLAG";
 const KEY_HEADER = "X-Master-Key";  // switch to "X-Access-Key" for a scoped key
 const BIN_URL    = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 const AUTH       = { [KEY_HEADER]: API_KEY };
